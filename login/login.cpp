@@ -10,11 +10,11 @@ void login::get_credentials( ) {
 		if ( empty_fields )
 			std::cout << xorstr_( "\nfill all the empty fields.\n" ) << std::endl;
 
-		std::cout << xorstr_( "[ephemeral] username: " );
+		std::cout << xorstr_( "[cheat name] username: " );
 		std::getline( std::cin, username );
 
-		std::cout << xorstr_( "[ephemeral] password: " );
-		//utilities::toggle_text( );
+		std::cout << xorstr_( "[cheat name] password: " );
+		utilities::toggle_text( );
 		std::getline( std::cin, password );
 
 		if ( !empty_fields )
