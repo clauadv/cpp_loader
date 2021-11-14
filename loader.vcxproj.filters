@@ -1,34 +1,107 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="source files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="curl">
+      <UniqueIdentifier>{2b56edd9-c3ed-45d8-93ad-04d551935a3a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source files\utilities">
-      <UniqueIdentifier>{90ce31c0-0cf4-4a3d-a55e-7a7fb5df09af}</UniqueIdentifier>
+    <Filter Include="vm_protect">
+      <UniqueIdentifier>{3a5ed2e5-33d3-4335-a4b8-af2b34c637ff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source files\login">
-      <UniqueIdentifier>{a3e9662e-f960-4a49-8c37-88976bc6c243}</UniqueIdentifier>
+    <Filter Include="vm_protect\include">
+      <UniqueIdentifier>{124bcd27-f3b9-4105-9b75-046e20ced995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vm_protect\lib">
+      <UniqueIdentifier>{12b38ab2-b15e-467a-9451-229427c24012}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="curl\include">
+      <UniqueIdentifier>{07ddc0e5-44ec-4df9-b302-21359f83714c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="curl\lib">
+      <UniqueIdentifier>{261b2cad-9534-4e1e-affc-6e2836b80e96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{17d2e774-51ef-4e8e-9bb6-cc8e85b64b39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="security">
+      <UniqueIdentifier>{88c874bd-6dab-4133-aa97-6a08a9bc79d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{d09b2056-3249-4af0-aa3d-5c1b84ff1b29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="web">
+      <UniqueIdentifier>{164f6cb7-b640-4921-9a57-0fabedeaf6cb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="loader.cpp">
-      <Filter>source files</Filter>
+    <ClInclude Include="vm_protect\include\vm_protect_sdk.h">
+      <Filter>vm_protect\include</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\include\curl.h">
+      <Filter>curl\include</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\include\curlbuild.h">
+      <Filter>curl\include</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\include\curlrules.h">
+      <Filter>curl\include</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\include\curlver.h">
+      <Filter>curl\include</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\include\easy.h">
+      <Filter>curl\include</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\include\mprintf.h">
+      <Filter>curl\include</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\include\multi.h">
+      <Filter>curl\include</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\include\stdcheaders.h">
+      <Filter>curl\include</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\include\typecheck-gcc.h">
+      <Filter>curl\include</Filter>
+    </ClInclude>
+    <ClInclude Include="security\security.h">
+      <Filter>security</Filter>
+    </ClInclude>
+    <ClInclude Include="includes.h" />
+    <ClInclude Include="game\game.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="security\xor_string.h">
+      <Filter>security</Filter>
+    </ClInclude>
+    <ClInclude Include="web\web.h">
+      <Filter>web</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main\main.cpp">
+      <Filter>main</Filter>
     </ClCompile>
-    <ClCompile Include="utilities\utilities.cpp">
-      <Filter>source files\utilities</Filter>
+    <ClCompile Include="security\security.cpp">
+      <Filter>security</Filter>
     </ClCompile>
-    <ClCompile Include="login\login.cpp">
-      <Filter>source files\login</Filter>
+    <ClCompile Include="game\game.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="web\web.cpp">
+      <Filter>web</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="utilities\utilities.h">
-      <Filter>source files\utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="login\login.h">
-      <Filter>source files\login</Filter>
-    </ClInclude>
+    <Library Include="curl\lib\libcurl_a.lib">
+      <Filter>curl\lib</Filter>
+    </Library>
+    <Library Include="vm_protect\lib\VMProtectSDK32.lib">
+      <Filter>vm_protect\lib</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vm_protect\lib\VMProtectSDK32.dll">
+      <Filter>vm_protect\lib</Filter>
+    </None>
   </ItemGroup>
 </Project>
