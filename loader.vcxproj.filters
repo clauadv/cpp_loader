@@ -63,32 +63,29 @@
     <ClInclude Include="curl\include\typecheck-gcc.h">
       <Filter>curl\include</Filter>
     </ClInclude>
-    <ClInclude Include="security\security.h">
-      <Filter>security</Filter>
-    </ClInclude>
     <ClInclude Include="includes.h" />
     <ClInclude Include="game\game.h">
       <Filter>game</Filter>
     </ClInclude>
-    <ClInclude Include="security\xor_string.h">
+    <ClInclude Include="security\xor.h">
       <Filter>security</Filter>
     </ClInclude>
     <ClInclude Include="web\web.h">
       <Filter>web</Filter>
     </ClInclude>
+    <ClInclude Include="security\opcode.h">
+      <Filter>security</Filter>
+    </ClInclude>
+    <ClInclude Include="security\process.h">
+      <Filter>security</Filter>
+    </ClInclude>
+    <ClInclude Include="security\helper.h">
+      <Filter>security</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main\main.cpp">
       <Filter>main</Filter>
-    </ClCompile>
-    <ClCompile Include="security\security.cpp">
-      <Filter>security</Filter>
-    </ClCompile>
-    <ClCompile Include="game\game.cpp">
-      <Filter>game</Filter>
-    </ClCompile>
-    <ClCompile Include="web\web.cpp">
-      <Filter>web</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

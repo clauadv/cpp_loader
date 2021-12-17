@@ -70,37 +70,37 @@ namespace XorCompileTime {
 		}
 	};
 
-#define xor_string( s ) ( XorCompileTime::XorString< sizeof( s ) - 1, __COUNTER__ >( s, std::make_index_sequence< sizeof( s ) - 1>() )._encrypted.data() )
+#define _( s ) ( XorCompileTime::XorString< sizeof( s ) - 1, __COUNTER__ >( s, std::make_index_sequence< sizeof( s ) - 1>() )._encrypted.data() )
 }
 
 class safe_string {
 public:
+	std::string raw;
+
 	safe_string() {
-		auto randchar = []() -> char {
-			const char charset[] =
-				"0123456789"
+		auto _ = []() {
+			constexpr char charset[] = "0123456789"
 				"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 				"abcdefghijklmnopqrstuvwxyz";
-			const size_t max_index = (sizeof(charset) - 1);
+
+			constexpr std::size_t max_index = (sizeof(charset) - 1);
 			return charset[rand() % max_index];
 		};
 
 		raw = "undefined";
 	}
 
-	safe_string(char * str) {
+	safe_string(const char* str) {
 		raw = std::string{ str };
 	}
 
-	std::string raw;
-
-	auto show() -> void {
-		for (auto & c : raw)
+	void show() {
+		for (auto& c : raw)
 			c ^= 2;
 	}
 
-	auto hide() -> void {
-		for (auto & c : raw)
+	void hide() {
+		for (auto& c : raw)
 			c ^= 2;
 	}
 };

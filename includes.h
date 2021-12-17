@@ -5,7 +5,7 @@
 #pragma warning( disable : 4129 )
 
 // sdk
-#include <windows.h>
+#include <Windows.h>
 #include <string>
 #include <vector>
 #include <unordered_map>
@@ -28,14 +28,14 @@
 
 // defines
 #define stra(x) VMProtectDecryptStringA(x)
-#define print(x, y, ...) ( std::cout << stra("[*] ") << stra(x) << std::endl, std::this_thread::sleep_for(std::chrono::seconds(y)) );
-#define print_error(x, ...) ( std::cout << stra("[*] ") << stra(x) << std::endl, std::this_thread::sleep_for(std::chrono::seconds(5)), std::exit(-1) );
 
 // xor
-#include "security/xor_string.h"
+#include "security/xor.h"
 
 // self
-#include "security/security.h"
+#include "security/opcode.h"
+#include "security/process.h"
+#include "security/helper.h"
 #include "game/game.h"
 #include "web/web.h"
 

@@ -30,16 +30,15 @@
     <ClInclude Include="curl\include\typecheck-gcc.h" />
     <ClInclude Include="game\game.h" />
     <ClInclude Include="includes.h" />
-    <ClInclude Include="security\security.h" />
-    <ClInclude Include="security\xor_string.h" />
+    <ClInclude Include="security\helper.h" />
+    <ClInclude Include="security\opcode.h" />
+    <ClInclude Include="security\process.h" />
+    <ClInclude Include="security\xor.h" />
     <ClInclude Include="vm_protect\include\vm_protect_sdk.h" />
     <ClInclude Include="web\web.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="game\game.cpp" />
     <ClCompile Include="main\main.cpp" />
-    <ClCompile Include="security\security.cpp" />
-    <ClCompile Include="web\web.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="curl\lib\libcurl_a.lib" />
@@ -105,6 +104,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LibraryPath>$(LibraryPath);$(ProjectDir)\curl\lib;$(ProjectDir)\vm_protect\lib;$(DXSDK_DIR)Lib\x86</LibraryPath>
     <IncludePath>$(ProjectDir)\curl\include;$(ProjectDir)\vm_protect\include;$(IncludePath);$(DXSDK_DIR)Include</IncludePath>
+    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
+    <OutDir>$(SolutionDir)\$(Configuration)\</OutDir>
+    <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(IncludePath);$(DXSDK_DIR)Include</IncludePath>
@@ -137,16 +139,22 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;CURL_STATICLIB;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -155,6 +163,9 @@
       <SubSystem>NotSet</SubSystem>
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
       <Command>"E:\Programe TW\VM Protect\VMProtect_Con.exe" "$(LocalDebuggerCommand)" "$(LocalDebuggerCommand)"</Command>
